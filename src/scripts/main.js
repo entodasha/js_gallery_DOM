@@ -12,7 +12,9 @@ thumbs.addEventListener('click', function (e) {
   const mainImage = document.getElementById('largeImg');
 
   if (e.target.tagName === 'IMG') {
-    mainImage.src = e.target.parentElement.href;
+    if (e.target.parentElement) {
+      mainImage.src = e.target.parentElement.href;
+    }
   } else if (e.target.tagName === 'A') {
     mainImage.src = e.target.href;
   }
